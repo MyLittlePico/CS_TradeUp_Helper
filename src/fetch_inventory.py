@@ -18,8 +18,8 @@ def get_inventory_csv():
 
 def inventory_url(steam_id, start_id = 0):
     if start_id:
-        return f"https://steamcommunity.com/inventory/{steam_id}/{GAME_ID}/2?count=500&preserve_bbcode=1&raw_asset_properties=1&start_assetid={start_id}"
-    return f"https://steamcommunity.com/inventory/{steam_id}/{GAME_ID}/2?count=500&preserve_bbcode=1&raw_asset_properties=1"
+        return f"https://steamcommunity.com/inventory/{steam_id}/{GAME_ID}/2?count=1000&preserve_bbcode=1&raw_asset_properties=1&start_assetid={start_id}"
+    return f"https://steamcommunity.com/inventory/{steam_id}/{GAME_ID}/2?count=1000&preserve_bbcode=1&raw_asset_properties=1"
 
 
 def get_item_list(steam_id, url):
@@ -36,6 +36,7 @@ def get_item_list(steam_id, url):
     desc_map = {f"{d['classid']}_{d['instanceid']}": d for d in raw_data['descriptions']}
     prop_map = {f"{d['assetid']}": d for d in raw_data['asset_properties']}
     
+    print(f"get {len(raw_data['assets'])} assets in your inventory")
     item_list = []
 
     if raw_data.get("last_assetid", 0):
