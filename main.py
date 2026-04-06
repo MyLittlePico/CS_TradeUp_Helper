@@ -3,6 +3,7 @@ import os
 
 from src.fetch_inventory import get_inventory_csv
 from src.list_inventory import list_inventory_comps
+from src.interface import interface
 
 
 def main():
@@ -22,8 +23,12 @@ def main():
 
     if args.fetch:
         get_inventory_csv()
+        return
     if args.comps:
         list_inventory_comps()
+        return
+
+    interface()
 
     
     
