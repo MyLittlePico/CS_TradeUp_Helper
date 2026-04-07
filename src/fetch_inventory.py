@@ -13,8 +13,8 @@ def get_inventory_csv():
     item_list = get_item_list( steam_id, inventory_url(steam_id)) 
 
     df = pd.DataFrame(item_list)
+    
     df.to_csv("./user/My_Inventory.csv", index = False)
-
 
 def inventory_url(steam_id, start_id = 0):
     if start_id:
@@ -61,7 +61,8 @@ def get_item_list(steam_id, url):
                 "Category": tags_dict["Quality"].get('localized_tag_name',"N/A"),
                 "Quality": tags_dict["Rarity"].get('localized_tag_name',"N/A"),
                 "Collection": tags_dict["ItemSet"].get('localized_tag_name',"N/A"),
-                "Float": float_value
+                "Float": float_value,
+                "Normalized_Float": float_value
             })
     print("local csv file created")
     return item_list
