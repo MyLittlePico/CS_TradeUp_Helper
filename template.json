@@ -1,0 +1,36 @@
+### this is a template for the configuration file. You can copy and modify it to create your own configuration.
+### change the file name to "config.json" and place it in user/ directory.
+### remove comments before using.
+
+{
+    "category": "",  # "Normal" / "StatTrak™"
+    "quality": "", # "Factory New" / "Minimal Wear" / "Field-Tested" / "Well-Worn" / "Battle-Scarred"
+    "composition":
+    {
+        "The Anubis Collection":
+        [
+            {
+                "quantity" : 4,
+                "exterior" : "Minimal Wear"
+            },
+            {
+                "quantity" : 2,
+                "exterior" : "Factory New"
+            }
+        ],
+        "The Genesis Collection":
+        [
+            {
+            "quantity" : 4,
+            "exterior" : "Factory New"
+            }
+        ]
+    },
+    # use a IEEE 754 value
+    "target_value": 0.070000000298023223876953125,
+    "float_caps":
+    {   # add float caps manually
+        "AK-47 | Steel Delta": [ 0.0, 0.73 ],
+        "AWP | Black Nile": [ 0.0, 0.75]
+    }
+}
